@@ -2,6 +2,7 @@ import com.github.javafaker.Faker;
 import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import page.StudentRegistrationPageJenkins;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;

@@ -1,3 +1,5 @@
+package page;
+
 import io.qameta.allure.Step;
 
 import java.io.File;

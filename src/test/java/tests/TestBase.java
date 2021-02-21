@@ -8,7 +8,8 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
-import static helpers.AttachmentHelperAllure.AttachmentsHelper.*;
+import static helpers.AttachmentHelper.*;
+
 
 public class TestBase {
     @BeforeAll
@@ -25,6 +26,7 @@ public class TestBase {
             Configuration.browserCapabilities = capabilities;
             Configuration.remote = System.getProperty("remote_driver");
         }
+    }
         @AfterEach
         public void afterEach () {
             attachScreenshot("Last screenshot");
@@ -35,3 +37,6 @@ public class TestBase {
             closeWebDriver();
         }
     }
+
+
+

@@ -57,13 +57,13 @@ public class StudentRegistrationFormJenkins extends TestBase {
     @DisplayName("Отправка формы без заполнения полей")
     @Owner("MightyBoolik")
     public void negativeFillFormTest() {
-        step("Open registration form", () ->{
+        step("Open registration form", () -> {
             open("https://demoqa.com/automation-practice-form");
         });
-        step("Open registration form", () ->{
+        step("Open registration form", () -> {
             $("#submit").click();
         });
-        step("Open registration form", () ->{
+        step("Open registration form", () -> {
             $(".modal-content").shouldHave(text("Thanks for submitting the form"));
         });
     }

@@ -12,10 +12,10 @@ import static helpers.AttachmentHelperAllure.AttachmentsHelper.*;
 
 public class TestBase {
     @BeforeAll
-    static void setup(){
-        addListener("AllureSelenide",new AllureSelenide());
+    static void setup() {
+        addListener("AllureSelenide", new AllureSelenide());
         Configuration.startMaximized = true;
-        Configuration.browser = System.getProperty("browser","chrome");
+        Configuration.browser = System.getProperty("browser", "chrome");
         Configuration.baseUrl = "https://demoqa.com";
 
         if (System.getProperty("remote_driver") != null) {
@@ -24,13 +24,14 @@ public class TestBase {
             capabilities.setCapability("enableVideo", true);
             Configuration.browserCapabilities = capabilities;
             Configuration.remote = System.getProperty("remote_driver");
-    }
+        }
         @AfterEach
-        public void afterEach() {
+        public void afterEach () {
             attachScreenshot("Last screenshot");
             attachPageSource();
             attachAsText("Browser console logs", getConsoleLogs());
             if (System.getProperty("video_storage") != null)
-            attachVideo();
+                attachVideo();
             closeWebDriver();
-}
+        }
+    }

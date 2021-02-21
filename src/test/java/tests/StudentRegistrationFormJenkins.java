@@ -1,3 +1,5 @@
+package tests;
+
 import com.github.javafaker.Faker;
 import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;

@@ -33,8 +33,7 @@ public class TestBase {
             attachPageSource();
             attachAsText("Browser console logs", getConsoleLogs());
             if (System.getProperty("video_storage") != null)
-                attachVideo();
-            closeWebDriver();
+            attachVideo();
         }
     }
 

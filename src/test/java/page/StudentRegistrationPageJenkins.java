@@ -8,20 +8,18 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
-import static io.qameta.allure.Allure.step;
 
 public class StudentRegistrationPageJenkins {
     @Step("Open student registration form")
-    public StudentRegistrationPageJenkins openPage() {
-        open("https://demoqa.com/automation-practice-form");
+    public StudentRegistrationPageJenkins openPage(String url) {
+        open(url);
+        $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
         return this;
     }
 
     @Step("Set first name")
     public StudentRegistrationPageJenkins setFirstName(String firstName) {
-        step("setFirstName", () -> {
-            $("#firstName").val(firstName);
-        });
+        $("#firstName").val(firstName);
         return this;
     }
 

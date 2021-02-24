@@ -38,7 +38,7 @@ public class StudentRegistrationFormJenkins extends TestBase {
     @Owner("MightyBoolik")
     public void successfulFillFormTest() {
 
-        studentRegistrationPage.openPage()
+        studentRegistrationPage.openPage(url)
                 .setFirstName(firstName)
                 .setLastName(lastName)
                 .setEmail(email)

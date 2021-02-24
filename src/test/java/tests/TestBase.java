@@ -18,13 +18,12 @@ public class TestBase {
         Configuration.startMaximized = true;
         Configuration.browser = System.getProperty("browser", "chrome");
 
-        if (System.getProperty("remote_driver") != null) {
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setCapability("enableVNC", true);
             capabilities.setCapability("enableVideo", true);
             Configuration.browserCapabilities = capabilities;
             Configuration.remote = System.getProperty("remote_driver");
-        }
+
     }
         @AfterEach
         public void afterEach () {

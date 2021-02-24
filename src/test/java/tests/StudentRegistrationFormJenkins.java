@@ -61,7 +61,7 @@ public class StudentRegistrationFormJenkins extends TestBase {
     @Owner("MightyBoolik")
     public void negativeFillFormTest() {
         step("Open registration form", () -> {
-            open(url);
+            studentRegistrationPage.openPage(url);
         });
         step("Open registration form", () -> {
             $("#submit").click();

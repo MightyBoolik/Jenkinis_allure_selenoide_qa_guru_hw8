@@ -38,7 +38,7 @@ public class StudentRegistrationFormJenkins extends TestBase {
     @Owner("MightyBoolik")
     public void successfulFillFormTest() {
 
-        studentRegistrationPage.openPage(url)
+        studentRegistrationPage.openPage()
                 .setFirstName(firstName)
                 .setLastName(lastName)
                 .setEmail(email)
@@ -61,7 +61,7 @@ public class StudentRegistrationFormJenkins extends TestBase {
     @Owner("MightyBoolik")
     public void negativeFillFormTest() {
         step("Open registration form", () -> {
-            studentRegistrationPage.openPage(url);
+            open("https://demoqa.com/automation-practice-form");
         });
         step("Open registration form", () -> {
             $("#submit").click();

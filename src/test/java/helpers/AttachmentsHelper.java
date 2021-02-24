@@ -10,6 +10,7 @@ import java.nio.charset.StandardCharsets;
 
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static io.qameta.allure.selenide.LogType.BROWSER;
+import static java.lang.String.valueOf;
 
 public class AttachmentsHelper {
 
@@ -44,7 +45,7 @@ public class AttachmentsHelper {
     }
 
     public static String getConsoleLogs() {
-        return String.join("\n", Selenide.getWebDriverLogs(String.valueOf(BROWSER)));
+        return String.join("\n", Selenide.getWebDriverLogs(valueOf(BROWSER)));
     }
 
 }

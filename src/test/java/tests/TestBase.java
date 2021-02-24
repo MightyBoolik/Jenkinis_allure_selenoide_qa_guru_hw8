@@ -26,15 +26,16 @@ public class TestBase {
             Configuration.remote = System.getProperty("remote_driver");
 
         }
+    }
         @AfterEach
-        public void afterEach () {
+        public void afterEach() {
             attachScreenshot("Last screenshot");
             attachPageSource();
             attachAsText("Browser console logs", getConsoleLogs());
             if (System.getProperty("video_storage") != null)
                 attachVideo();
         }
-    }
+
 
 }
 

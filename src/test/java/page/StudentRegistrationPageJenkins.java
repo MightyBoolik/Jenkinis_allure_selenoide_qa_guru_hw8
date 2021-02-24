@@ -13,7 +13,7 @@ import static io.qameta.allure.Allure.step;
 public class StudentRegistrationPageJenkins {
     @Step("Open student registration form")
     public StudentRegistrationPageJenkins openPage(String url) {
-        open("https://demoqa.com/automation-practice-form");
+        open(url);
         $(".practice-form-wrapper").shouldHave(text("Student Registration Form"));
         return this;
     }

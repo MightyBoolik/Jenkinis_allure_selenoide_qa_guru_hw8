@@ -70,7 +70,7 @@ public class StudentRegistrationPageJenkins {
 
     @Step("Upload file")
     public StudentRegistrationPageJenkins uploadFile(String picture) {
-        $("#uploadPicture").uploadFile(new File("src/test/resources/upload/" + picture));
+        $("#uploadPicture").uploadFromClasspath("upload/" + picture);
         return this;
     }
 

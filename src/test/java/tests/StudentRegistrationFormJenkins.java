@@ -27,7 +27,7 @@ public class StudentRegistrationFormJenkins extends TestBase {
             year = "1994",
             subjects = "Maths",
             hobbies = "Reading",
-            picture = "noname.png",
+            picture = "noname1.png",
             address = faker.address().fullAddress(),
             state = "Rajasthan",
             city = "Jaipur",

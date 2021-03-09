@@ -1,6 +1,7 @@
 package tests;
 
 import com.github.javafaker.Faker;
+import config.TestBase;
 import io.qameta.allure.Owner;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;

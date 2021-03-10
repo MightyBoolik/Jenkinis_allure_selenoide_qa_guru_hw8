@@ -1,10 +1,8 @@
 package config;
 
-import com.codeborne.selenide.Config;
-import org.aeonbits.owner.Config.Key;
-import org.aeonbits.owner.Config.Sources;
+import org.aeonbits.owner.Config;
 
-@Sources("classpath:${env}.properties")
+@Config.Sources("classpath:${env}.properties")
 public interface WebConfig extends Config {
     @Key("search.browser")
     String searchBrowser();

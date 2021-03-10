@@ -6,24 +6,20 @@ import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
-import config.WebConfig;
-
-
 import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
 import static helpers.AttachmentsHelper.*;
 
-
 public class TestBase {
+    final static WebConfig config = ConfigFactory.create(WebConfig.class,System.getProperties());
     @BeforeAll
     static void setup() {
-        final WebConfig config = ConfigFactory.create(WebConfig.class, System.getProperties());
         addListener("AllureSelenide", new AllureSelenide());
         Configuration.startMaximized = true;
         Configuration.browser = config.searchBrowser();
         Configuration.browserVersion = config.searchVersion();
 
-        if (System.getProperty("remote_driver") != null) {
+        if (config.searchRemote() != null) {
             // config for Java + Selenide
             DesiredCapabilities capabilities = new DesiredCapabilities();
             capabilities.setCapability("enableVNC", true);
@@ -39,7 +35,7 @@ public class TestBase {
         attachScreenshot("Last screenshot");
         attachPageSource();
         attachAsText("Browser console logs", getConsoleLogs());
-        if (System.getProperty("video_storage") != null)
+        if (config.videoStorage() != null)
             attachVideo();
         closeWebDriver();
     }
